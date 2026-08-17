@@ -1,851 +1,600 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Dave Gold Resolution | DGR</title>
-
-<meta name="description"
-content="Dave Gold Resolution — Graphic Design, Content Creation and Digital Creative Services.">
-
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #07050b;
-    color: #fff;
-    line-height: 1.6;
-}
-
-/* NAVIGATION */
-
-nav {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background: rgba(7,5,11,.95);
-    backdrop-filter: blur(15px);
-    border-bottom: 1px solid rgba(255,215,0,.25);
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    padding: 12px 6%;
-}
-
-.logo-small {
-    width: 58px;
-    height: 58px;
-    object-fit: contain;
-}
-
-.brand {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    text-decoration: none;
-    color: white;
-}
-
-.brand-name {
-    font-weight: 900;
-    font-size: 16px;
-}
-
-.brand-name span {
-    display: block;
-    color: #ffd700;
-    font-size: 10px;
-    letter-spacing: 2px;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 25px;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-nav a:hover {
-    color: #ffd700;
-}
-
-/* HERO */
-
-.hero {
-    min-height: 90vh;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    text-align: center;
-    padding: 70px 6%;
-
-    background:
-        radial-gradient(circle at 20% 20%, rgba(115,30,255,.28), transparent 35%),
-        radial-gradient(circle at 80% 70%, rgba(255,20,60,.22), transparent 35%),
-        #07050b;
-}
-
-.hero-content {
-    max-width: 900px;
-}
-
-.hero-logo {
-    width: min(300px, 70vw);
-    margin-bottom: 20px;
-    filter: drop-shadow(0 0 25px rgba(255,215,0,.25));
-}
-
-.tag {
-    display: inline-block;
-    border: 1px solid #ffd700;
-    color: #ffd700;
-    border-radius: 30px;
-    padding: 7px 18px;
-    font-size: 12px;
-    letter-spacing: 2px;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-
-.hero h1 {
-    font-size: clamp(45px, 8vw, 90px);
-    line-height: 1;
-    font-weight: 900;
-}
-
-.gold {
-    background: linear-gradient(90deg,#ffd700,#fff1a6,#ffd700);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.hero h2 {
-    margin-top: 20px;
-    color: #ff3155;
-    font-size: clamp(20px,3vw,32px);
-}
-
-.hero p {
-    max-width: 700px;
-    margin: 20px auto;
-    color: #ccc6d2;
-    font-size: 18px;
-}
-
-.buttons {
-    margin-top: 30px;
-
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-.btn {
-    padding: 14px 26px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: 900;
-    transition: .3s;
-}
-
-.btn-primary {
-    background: linear-gradient(90deg,#ffd700,#ff1744);
-    color: #08050d;
-}
-
-.btn-secondary {
-    border: 1px solid #ffd700;
-    color: #ffd700;
-}
-
-.btn:hover {
-    transform: translateY(-4px);
-}
-
-/* SECTIONS */
-
-section {
-    padding: 90px 6%;
-}
-
-.section-title {
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-.section-title h2 {
-    font-size: clamp(32px,5vw,50px);
-}
-
-.section-title p {
-    color: #aaa4b4;
-}
-
-/* ABOUT */
-
-.about {
-    background: #0c0812;
-}
-
-.about-box {
-    max-width: 900px;
-    margin: auto;
-
-    padding: 40px;
-
-    border: 1px solid rgba(255,215,0,.2);
-    border-radius: 25px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(120,40,255,.1),
-            rgba(255,20,60,.06)
-        );
-
-    text-align: center;
-}
-
-.about-box p {
-    color: #d6d1dc;
-    font-size: 18px;
-}
-
-/* SERVICES */
-
-.services-grid {
-    max-width: 1150px;
-    margin: auto;
-
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 20px;
-}
-
-.service {
-    padding: 30px 22px;
-    border-radius: 20px;
-
-    background: #100b18;
-    border: 1px solid rgba(255,215,0,.15);
-
-    transition: .3s;
-}
-
-.service:hover {
-    transform: translateY(-7px);
-    border-color: #ffd700;
-}
-
-.service-icon {
-    font-size: 35px;
-    margin-bottom: 12px;
-}
-
-.service h3 {
-    color: #ffd700;
-    margin-bottom: 8px;
-}
-
-.service p {
-    color: #aaa4b4;
-}
-
-/* PORTFOLIO */
-
-.portfolio {
-    background: #0c0812;
-}
-
-.portfolio-grid {
-    max-width: 1200px;
-    margin: auto;
-
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    gap: 25px;
-}
-
-.portfolio-item {
-    background: #100b18;
-    padding: 12px;
-    border-radius: 20px;
-
-    border: 1px solid rgba(255,215,0,.18);
-
-    overflow: hidden;
-    transition: .3s;
-}
-
-.portfolio-item:hover {
-    transform: translateY(-7px);
-    border-color: #ffd700;
-    box-shadow: 0 15px 40px rgba(0,0,0,.5);
-}
-
-.portfolio-item img {
-    width: 100%;
-    height: 380px;
-    object-fit: contain;
-    display: block;
-    border-radius: 14px;
-    background: #050308;
-}
-
-.portfolio-title {
-    text-align: center;
-    padding: 15px 5px 8px;
-
-    color: #ffd700;
-    font-weight: 800;
-}
-
-/* CTA */
-
-.cta {
-    text-align: center;
-
-    background:
-        radial-gradient(
-            circle at center,
-            rgba(120,40,255,.22),
-            transparent 60%
-        );
-}
-
-.cta h2 {
-    font-size: clamp(35px,5vw,60px);
-}
-
-.cta p {
-    color: #c7c1cf;
-    max-width: 700px;
-    margin: 15px auto 30px;
-    font-size: 18px;
-}
-
-/* CONTACT */
-
-.contact-grid {
-    max-width: 1050px;
-    margin: auto;
-
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 20px;
-}
-
-.contact-card {
-    padding: 30px 20px;
-    text-align: center;
-
-    border-radius: 20px;
-    background: #100b18;
-    border: 1px solid rgba(255,215,0,.15);
-}
-
-.contact-card h3 {
-    color: #ffd700;
-    margin-bottom: 10px;
-}
-
-.contact-card a {
-    color: #ddd8e3;
-    text-decoration: none;
-}
-
-.contact-card a:hover {
-    color: #ffd700;
-}
-
-/* FOOTER */
-
-footer {
-    text-align: center;
-    padding: 35px 6%;
-
-    background: #040207;
-
-    border-top: 1px solid rgba(255,215,0,.15);
-
-    color: #88828f;
-}
-
-footer strong {
-    color: #ffd700;
-}
-
-/* MOBILE */
-
-@media(max-width:800px) {
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Dave Gold Resolution | DGR</title>
+
+  <meta name="description" content="Dave Gold Resolution — Graphic Design, Branding, Flyers, Posters, Banners, Invitations and Digital Creative Services.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #08060d;
+      color: white;
+      line-height: 1.6;
+    }
+
+    /* NAVIGATION */
     nav {
-        flex-direction: column;
-        gap: 10px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(8, 6, 13, 0.95);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(10px);
     }
 
-    nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 15px 25px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
 
-    .services-grid,
-    .contact-grid,
-    .portfolio-grid {
-        grid-template-columns: 1fr;
+    .nav-logo {
+      font-size: 22px;
+      font-weight: 900;
+      color: #ffd700;
+      letter-spacing: 2px;
     }
 
-    .portfolio-item img {
-        height: auto;
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      list-style: none;
     }
-}
 
-@media(max-width:480px) {
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
 
-    section {
-        padding: 65px 5%;
+    .nav-links a:hover {
+      color: #ffd700;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 70px 20px;
+      background:
+        radial-gradient(circle at top left, rgba(255,0,70,0.22), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(130,0,255,0.25), transparent 35%),
+        #08060d;
+    }
+
+    .hero-content {
+      max-width: 900px;
+    }
+
+    .hero-logo {
+      width: 180px;
+      max-width: 60%;
+      margin-bottom: 25px;
+      filter: drop-shadow(0 0 25px rgba(255,215,0,0.3));
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 8vw, 80px);
+      line-height: 1;
+      margin-bottom: 20px;
+      background: linear-gradient(90deg, #ffd700, #ff3c3c, #a855f7);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero h2 {
+      font-size: clamp(20px, 4vw, 32px);
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: auto;
+      color: #d0d0d0;
+      font-size: 18px;
     }
 
     .buttons {
-        flex-direction: column;
+      margin-top: 35px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
     }
 
     .btn {
-        width: 100%;
+      display: inline-block;
+      padding: 14px 25px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
     }
-}
-</style>
+
+    .btn-primary {
+      background: linear-gradient(90deg, #ffd700, #ff3c3c);
+      color: #08060d;
+    }
+
+    .btn-secondary {
+      border: 1px solid #ffd700;
+      color: #ffd700;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(255,215,0,0.2);
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 80px 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+      font-size: 40px;
+      margin-bottom: 10px;
+      color: #ffd700;
+    }
+
+    .section-title p {
+      color: #aaa;
+    }
+
+    /* SERVICES */
+    .services {
+      background: #0d0915;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .service-card {
+      padding: 30px;
+      background: linear-gradient(145deg, #151020, #0d0a13);
+      border: 1px solid rgba(255,215,0,0.18);
+      border-radius: 18px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-7px);
+      border-color: #ffd700;
+    }
+
+    .service-icon {
+      font-size: 40px;
+      margin-bottom: 15px;
+    }
+
+    .service-card h3 {
+      color: #ffd700;
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      color: #aaa;
+    }
+
+    /* PORTFOLIO */
+    .portfolio {
+      background: #08060d;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .portfolio-card {
+      overflow: hidden;
+      border-radius: 18px;
+      background: #120e19;
+      border: 1px solid rgba(255,255,255,0.1);
+      transition: 0.3s;
+    }
+
+    .portfolio-card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+    }
+
+    .portfolio-card img {
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+      display: block;
+      background: #15121b;
+    }
+
+    .portfolio-info {
+      padding: 18px;
+    }
+
+    .portfolio-info h3 {
+      color: #ffd700;
+    }
+
+    /* ABOUT */
+    .about {
+      background:
+        linear-gradient(rgba(8,6,13,0.92), rgba(8,6,13,0.96));
+    }
+
+    .about-box {
+      max-width: 850px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .about-box p {
+      color: #ccc;
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    /* CONTACT */
+    .contact {
+      background: #0d0915;
+    }
+
+    .contact-box {
+      max-width: 700px;
+      margin: auto;
+      text-align: center;
+      padding: 40px;
+      border-radius: 20px;
+      background: #120e19;
+      border: 1px solid rgba(255,215,0,0.2);
+    }
+
+    .contact-item {
+      margin: 20px 0;
+      font-size: 18px;
+    }
+
+    .contact-item strong {
+      color: #ffd700;
+    }
+
+    .contact-item a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .contact-item a:hover {
+      color: #ffd700;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 30px 20px;
+      text-align: center;
+      background: #050407;
+      color: #888;
+    }
+
+    footer strong {
+      color: #ffd700;
+    }
+
+    /* MOBILE */
+    @media (max-width: 700px) {
+      .nav-container {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .nav-links {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero {
+        min-height: 80vh;
+      }
+
+      .hero-logo {
+        width: 140px;
+      }
+
+      section {
+        padding: 60px 15px;
+      }
+
+      .portfolio-card img {
+        height: auto;
+        max-height: 500px;
+        object-fit: contain;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="nav-container">
+      <div class="nav-logo">DGR</div>
 
-<nav>
-
-    <a href="#home" class="brand">
-
-        <img
-            src="images/dgr-logo.png"
-            alt="Dave Gold Resolution Logo"
-            class="logo-small"
-        >
-
-        <div class="brand-name">
-            Dave Gold Resolution
-            <span>DGR • CREATIVE • DIGITAL • DESIGN</span>
-        </div>
-
-    </a>
-
-    <ul>
+      <ul class="nav-links">
         <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#portfolio">My Work</a></li>
+        <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
-    </ul>
+      </ul>
+    </div>
+  </nav>
 
-</nav>
 
-
-<!-- HERO -->
-
-<section class="hero" id="home">
-
+  <!-- HERO -->
+  <header class="hero" id="home">
     <div class="hero-content">
 
-        <img
-            src="images/dgr-logo.png"
-            alt="Dave Gold Resolution"
-            class="hero-logo"
-        >
+      <img
+        src="DGR-Logo.png"
+        alt="Dave Gold Resolution Logo"
+        class="hero-logo"
+      >
 
-        <div class="tag">
-            WELCOME TO DGR
+      <h1>DAVE GOLD RESOLUTION</h1>
+
+      <h2>Creative Design. Digital Excellence.</h2>
+
+      <p>
+        Welcome to DGR — your creative destination for professional
+        graphic design, branding, flyers, posters, banners, invitations
+        and digital creative services.
+      </p>
+
+      <div class="buttons">
+        <a href="#portfolio" class="btn btn-primary">View My Work</a>
+        <a href="#contact" class="btn btn-secondary">Contact Me</a>
+      </div>
+
+    </div>
+  </header>
+
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2>My Services</h2>
+        <p>Creative solutions designed to make your brand stand out.</p>
+      </div>
+
+      <div class="service-grid">
+
+        <div class="service-card">
+          <div class="service-icon">🎨</div>
+          <h3>Graphic Design</h3>
+          <p>Creative and professional designs for your personal or business needs.</p>
         </div>
 
-        <h1>
-            Dave <span class="gold">Gold</span><br>
-            Resolution
-        </h1>
+        <div class="service-card">
+          <div class="service-icon">📢</div>
+          <h3>Flyers</h3>
+          <p>Eye-catching flyers for businesses, events and promotions.</p>
+        </div>
 
-        <h2>
-            Creative Design. Powerful Brand Impact.
-        </h2>
+        <div class="service-card">
+          <div class="service-icon">🖼️</div>
+          <h3>Posters</h3>
+          <p>Bold promotional posters that get attention.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">📱</div>
+          <h3>Social Media Design</h3>
+          <p>Professional graphics for Facebook, Instagram, TikTok and more.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🎉</div>
+          <h3>Event Designs</h3>
+          <p>Birthday, wedding, anniversary and special-event designs.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🏷️</div>
+          <h3>Branding</h3>
+          <p>Modern visual identities that help businesses look professional.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🪧</div>
+          <h3>Banners</h3>
+          <p>Professional banners for businesses, events and advertising.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">✨</div>
+          <h3>Creative Services</h3>
+          <p>Have another design idea? Let's bring it to life.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- PORTFOLIO -->
+  <section class="portfolio" id="portfolio">
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2>My Work</h2>
+        <p>A selection of DGR creative designs.</p>
+      </div>
+
+      <div class="portfolio-grid">
+
+        <div class="portfolio-card">
+          <img src="flyer.png" alt="DGR Flyer">
+          <div class="portfolio-info">
+            <h3>Creative Flyer</h3>
+            <p>Professional promotional design.</p>
+          </div>
+        </div>
+
+        <div class="portfolio-card">
+          <img src="flyer-2.png" alt="DGR Flyer 2">
+          <div class="portfolio-info">
+            <h3>Promotional Flyer</h3>
+            <p>Creative advertising design.</p>
+          </div>
+        </div>
+
+        <div class="portfolio-card">
+          <img src="poster.png" alt="DGR Poster">
+          <div class="portfolio-info">
+            <h3>Poster Design</h3>
+            <p>Bold and attention-grabbing design.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2>About DGR</h2>
+      </div>
+
+      <div class="about-box">
 
         <p>
-            Professional graphic design, content creation
-            and digital creative services that turn ideas
-            into powerful visual experiences.
+          <strong>Dave Gold Resolution (DGR)</strong> is a creative digital
+          brand focused on graphic design, branding and digital content.
         </p>
+
+        <p>
+          From flyers and posters to banners, invitations and social media
+          graphics, DGR helps turn ideas into professional visual designs.
+        </p>
+
+        <p>
+          <strong>Your idea. My creativity. One great resolution.</strong>
+        </p>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Let's Work Together</h2>
+        <p>Need a design? Get in touch with DGR.</p>
+      </div>
+
+      <div class="contact-box">
+
+        <div class="contact-item">
+          <strong>📱 WhatsApp / Phone:</strong><br>
+          <a href="tel:+2348146744216">08146744216</a>
+        </div>
+
+        <div class="contact-item">
+          <strong>📧 Email:</strong><br>
+          <a href="mailto:davegold797@gmail.com">
+            davegold797@gmail.com
+          </a>
+        </div>
+
+        <div class="contact-item">
+          <strong>📘 Facebook:</strong><br>
+          <a
+            href="https://www.facebook.com/profile.php?id=61587464477803"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Visit my Facebook profile
+          </a>
+        </div>
 
         <div class="buttons">
-
-            <a href="#portfolio" class="btn btn-primary">
-                View My Work
-            </a>
-
-            <a
-                href="https://wa.me/2348146744216"
-                class="btn btn-secondary"
-                target="_blank"
-            >
-                WhatsApp Me
-            </a>
-
+          <a
+            href="https://wa.me/2348146744216"
+            class="btn btn-primary"
+            target="_blank"
+          >
+            Message Me on WhatsApp
+          </a>
         </div>
+
+      </div>
 
     </div>
+  </section>
 
-</section>
 
-
-<!-- ABOUT -->
-
-<section class="about" id="about">
-
-    <div class="section-title">
-
-        <h2>
-            About <span class="gold">DGR</span>
-        </h2>
-
-        <p>
-            Creative vision. Professional design. Digital impact.
-        </p>
-
-    </div>
-
-    <div class="about-box">
-
-        <p>
-            <strong>Dave Gold Resolution (DGR)</strong>
-            is a creative digital brand focused on graphic
-            design, content creation and digital creativity.
-            We create powerful visuals for individuals,
-            businesses, brands, events and creators.
-        </p>
-
-    </div>
-
-</section>
-
-
-<!-- SERVICES -->
-
-<section id="services">
-
-    <div class="section-title">
-
-        <h2>
-            My <span class="gold">Services</span>
-        </h2>
-
-        <p>
-            Creative solutions for your personal and business needs.
-        </p>
-
-    </div>
-
-
-    <div class="services-grid">
-
-        <div class="service">
-            <div class="service-icon">🎨</div>
-            <h3>Graphic Design</h3>
-            <p>
-                Professional creative designs for brands,
-                businesses and individuals.
-            </p>
-        </div>
-
-        <div class="service">
-            <div class="service-icon">📢</div>
-            <h3>Flyer Design</h3>
-            <p>
-                Eye-catching flyers for businesses,
-                promotions and events.
-            </p>
-        </div>
-
-        <div class="service">
-            <div class="service-icon">🖼️</div>
-            <h3>Banner Design</h3>
-            <p>
-                Bold banners for events, businesses
-                and digital platforms.
-            </p>
-        </div>
-
-        <div class="service">
-            <div class="service-icon">📸</div>
-            <h3>Poster Design</h3>
-            <p>
-                Creative posters designed to capture
-                attention.
-            </p>
-        </div>
-
-        <div class="service">
-            <div class="service-icon">🎂</div>
-            <h3>Birthday Invitation</h3>
-            <p>
-                Beautiful invitation cards for
-                birthdays and celebrations.
-            </p>
-        </div>
-
-        <div class="service">
-            <div class="service-icon">💍</div>
-            <h3>Wedding Invitation</h3>
-            <p>
-                Elegant invitation designs for
-                special wedding moments.
-            </p>
-        </div>
-
-        <div class="service">
-            <div class="service-icon">📱</div>
-            <h3>Social Media Design</h3>
-            <p>
-                Creative graphics that help your
-                social media content stand out.
-            </p>
-        </div>
-
-        <div class="service">
-            <div class="service-icon">🎬</div>
-            <h3>Content Creation</h3>
-            <p>
-                Digital creative content for creators
-                and brands.
-            </p>
-        </div>
-
-        <div class="service">
-            <div class="service-icon">✨</div>
-            <h3>More Creative Services</h3>
-            <p>
-                Have an idea? Let's bring your idea
-                to life.
-            </p>
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- PORTFOLIO -->
-
-<section class="portfolio" id="portfolio">
-
-    <div class="section-title">
-
-        <h2>
-            My <span class="gold">Work</span>
-        </h2>
-
-        <p>
-            A selection of DGR creative designs.
-        </p>
-
-    </div>
-
-
-    <div class="portfolio-grid">
-
-        <!-- YOUR REAL FLYER -->
-
-        <div class="portfolio-item">
-
-            <img
-                src="images/flyer-1.png"
-                alt="DGR Creative Design"
-            >
-
-            <div class="portfolio-title">
-                DGR Creative Design
-            </div>
-
-        </div>
-
-
-        <!-- YOUR REAL FLYER -->
-
-        <div class="portfolio-item">
-
-            <img
-                src="images/flyer-2.png"
-                alt="DGR Promotional Flyer"
-            >
-
-            <div class="portfolio-title">
-                DGR Promotional Flyer
-            </div>
-
-        </div>
-
-
-        <!-- YOUR REAL BANNER -->
-
-        <div class="portfolio-item">
-
-            <img
-                src="images/flyer-3.png"
-                alt="DGR Creative Banner"
-            >
-
-            <div class="portfolio-title">
-                DGR Creative Banner
-            </div>
-
-        </div>
-
-
-        <!-- YOUR REAL POSTER -->
-
-        <div class="portfolio-item">
-
-            <img
-                src="images/flyer-4.png"
-                alt="DGR Graphic Design Poster"
-            >
-
-            <div class="portfolio-title">
-                DGR Graphic Design Poster
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- CALL TO ACTION -->
-
-<section class="cta">
-
-    <h2>
-        Have an <span class="gold">Idea?</span>
-    </h2>
-
+  <!-- FOOTER -->
+  <footer>
     <p>
-        Need a flyer, banner, poster, invitation or
-        another creative design?
-        DGR is ready to bring your idea to life.
-    </p>
-
-    <a
-        href="https://wa.me/2348146744216"
-        class="btn btn-primary"
-        target="_blank"
-    >
-        Start a Project
-    </a>
-
-</section>
-
-
-<!-- CONTACT -->
-
-<section id="contact">
-
-    <div class="section-title">
-
-        <h2>
-            Get In <span class="gold">Touch</span>
-        </h2>
-
-        <p>
-            Let's create something amazing together.
-        </p>
-
-    </div>
-
-
-    <div class="contact-grid">
-
-        <div class="contact-card">
-
-            <h3>📱 WhatsApp</h3>
-
-            <a
-                href="https://wa.me/2348146744216"
-                target="_blank"
-            >
-                08146744216
-            </a>
-
-        </div>
-
-
-        <div class="contact-card">
-
-            <h3>✉️ Gmail</h3>
-
-            <a href="mailto:davegold797@gmail.com">
-                davegold797@gmail.com
-            </a>
-
-        </div>
-
-
-        <div class="contact-card">
-
-            <h3>📘 Facebook</h3>
-
-            <a
-                href="https://www.facebook.com/profile.php?id=61587464477803"
-                target="_blank"
-            >
-                Visit My Facebook
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- FOOTER -->
-
-<footer>
-
-    <p>
-        © 2026
-        <strong>Dave Gold Resolution (DGR)</strong>
+      © 2026 <strong>Dave Gold Resolution (DGR)</strong>.
+      All rights reserved.
     </p>
 
     <p>
-        GRAPHIC DESIGNER • CONTENT CREATOR • DIGITAL CREATOR
+      Graphic Design • Digital Creation • Branding
     </p>
-
-</footer>
+  </footer>
 
 </body>
 </html>
